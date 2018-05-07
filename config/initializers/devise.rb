@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '6f688b0b299c1a328ecebea2dfb066b168baaa9cc0849f2cb4661b41379e0c9dc5e78ea324b8e76c92e89042b16e9c482b60d820a4dbdffa378cdad9646f4c1b'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -174,6 +174,7 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
+  config.secret_key = 'd0ffb12416e9fd77137a14c24d6a76b87ad57e32830d0ea14823f779944456b35d577fb38914016d7e7ee87b644f7cc3e07062b1203b0c96ff1be00624f32c78'
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
