@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_05_07_141151) do
 
   create_table "blist_items", force: :cascade do |t|
-    t.integer "list_id"
+    t.integer "blist_id"
     t.integer "item_id"
     t.string "reason"
     t.integer "rank"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_05_07_141151) do
   end
 
   create_table "glist_items", force: :cascade do |t|
-    t.integer "list_id"
+    t.integer "glist_id"
     t.integer "item_id"
     t.string "reason"
     t.integer "rank"
