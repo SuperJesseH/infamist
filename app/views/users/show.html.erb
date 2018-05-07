@@ -1,29 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Item:</strong>
-  <%= @user.Item %>
+  <strong>Name:</strong>
+  <%= @user.name %>
 </p>
 
 <p>
-  <strong>Blsit item:</strong>
-  <%= @user.Blsit_item %>
-</p>
-
-<p>
-  <strong>Glist item:</strong>
-  <%= @user.Glist_item %>
+  <ol>
+  <strong>Blist:</strong>
+  <% @user.blist.items.each  do |item| %>
+  <li><%= item.name %></li>
+  <%end%>
+    </ol>
 </p>
 
 <p>
   <strong>Glist:</strong>
-  <%= @user.Glist %>
+  <%= @user.glist.items[0].name %>
 </p>
 
-<p>
-  <strong>Blist:</strong>
-  <%= @user.Blist %>
-</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

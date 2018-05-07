@@ -10,55 +10,51 @@ u1 = User.create(name: Faker::Name.unique.name)
 u2 = User.create(name: Faker::Name.unique.name)
 u3 = User.create(name: Faker::Name.unique.name)
 
-<<<<<<< HEAD
-i1 = Item.create(name: Faker::Movie.unique.name)
-i2 = Item.create(name: Faker::Music.unique.name)
-i3 = Item.create(name: Faker::Bank.unique.name)
-i3 = Item.create(name: 'pigeons')
-=======
-i1 = Item.create(name: Faker::Movie.name)
-i2 =Item.create(name: Faker::Music.name)
-i3 =Item.create(name: Faker::Bank.name)
-i4 =Item.create(name: Faker::BackToTheFuture.character)
-i5 =Item.create(name: Faker::DragonBall.character)
->>>>>>> 3c5e43fabe0f36f44b73842e47646725a2a7df38
 
-gl1 = Glist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
-gl2 = Glist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
-gl3 = Glist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
+i1 = Item.create(name: Faker::Cat.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i2 =Item.create(name: Faker::Company.bs, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i3 =Item.create(name: Faker::Bank.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i4 =Item.create(name: Faker::BackToTheFuture.character, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i5 =Item.create(name: Faker::DragonBall.character, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i6 = Item.create(name: Faker::Cat.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i7 =Item.create(name: Faker::Company.bs, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i8 =Item.create(name: Faker::Bank.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i9 =Item.create(name: Faker::BackToTheFuture.character, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
+i10 =Item.create(name: Faker::DragonBall.character, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
 
-<<<<<<< HEAD
-bl1 = Glist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
-bl2 = Glist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
-bl3 = Glist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 
-bl_item1= BlistItem.create(list_id: bl1.id, item_id: i1.id)
-=======
-bl1 = Blist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
-bl2 = Blist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
-bl3 = Blist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
+l1 = List.create(user_id: u1.id, description: Faker::Dessert.topping)
+l2 = List.create(user_id: u2.id, description: Faker::Dessert.topping)
+l3 = List.create(user_id: u3.id, description: Faker::Dessert.topping)
 
-bl_item1= BlistItem.create(blist_id: bl1.id, item_id: i1.id, reason: Faker::BackToTheFuture.quote, rank: 1)
 
-bl_item2= BlistItem.create(blist_id: bl1.id, item_id: i2.id, reason: Faker::BackToTheFuture.quote, rank: 2)
-
-bl_item3= BlistItem.create(blist_id: bl1.id, item_id: i3.id, reason: Faker::BackToTheFuture.quote, rank: 3)
-
-bl_item4= BlistItem.create(blist_id: bl2.id, item_id: i3.id, reason: Faker::BackToTheFuture.quote, rank: 1)
-
-bl_item5= BlistItem.create(blist_id: bl2.id, item_id: i2.id, reason: Faker::BackToTheFuture.quote, rank: 2)
-
-bl_item6= BlistItem.create(blist_id: bl2.id, item_id: i1.id, reason: Faker::BackToTheFuture.quote, rank: 3)
-
-bl_item7= BlistItem.create(blist_id: bl3.id, item_id: i2.id, reason: Faker::BackToTheFuture.quote, rank: 1)
-
-bl_item8= BlistItem.create(blist_id: bl3.id, item_id: i1.id, reason: Faker::BackToTheFuture.quote, rank: 2)
-
-bl_item9= BlistItem.create(blist_id: bl3.id, item_id: i3.id, reason: Faker::BackToTheFuture.quote, rank: 3)
-
-gl_item1= GlistItem.create(glist_id: bl3.id, item_id: i4.id, reason: Faker::BackToTheFuture.quote, rank: 1)
-
-gl_item2= GlistItem.create(glist_id: bl2.id, item_id: i4.id, reason: Faker::BackToTheFuture.quote, rank: 1)
-
-gl_item3= GlistItem.create(glist_id: bl1.id, item_id: i5.id, reason: Faker::BackToTheFuture.quote, rank: 1)
->>>>>>> 3c5e43fabe0f36f44b73842e47646725a2a7df38
+li1 = ListItem.create(list_id: l1.id, item_id: i1.id, reason: Faker::Hipster.sentences(1), rank: 1)
+li2 = ListItem.create(list_id: l1.id, item_id: i2.id, reason: Faker::Hipster.sentences(1), rank: 2)
+li3 = ListItem.create(list_id: l1.id, item_id: i3.id, reason: Faker::Hipster.sentences(1), rank: 3)
+li4 = ListItem.create(list_id: l1.id, item_id: i4.id, reason: Faker::Hipster.sentences(1), rank: 4)
+li5 = ListItem.create(list_id: l1.id, item_id: i5.id, reason: Faker::Hipster.sentences(1), rank: 5)
+li6 = ListItem.create(list_id: l1.id, item_id: i6.id, reason: Faker::Hipster.sentences(1), rank: 7)
+li7 = ListItem.create(list_id: l1.id, item_id: i7.id, reason: Faker::Hipster.sentences(1), rank: 6)
+li8 = ListItem.create(list_id: l1.id, item_id: i8.id, reason: Faker::Hipster.sentences(1), rank: 9)
+li9 = ListItem.create(list_id: l1.id, item_id: i9.id, reason: Faker::Hipster.sentences(1), rank: 8)
+li10 = ListItem.create(list_id: l1.id, item_id: i10.id, reason: Faker::Hipster.sentences(1), rank: 10)
+li11 = ListItem.create(list_id: l2.id, item_id: i10.id, reason: Faker::Hipster.sentences(1), rank: 1)
+li12 = ListItem.create(list_id: l2.id, item_id: i9.id, reason: Faker::Hipster.sentences(1), rank: 2)
+li13 = ListItem.create(list_id: l2.id, item_id: i8.id, reason: Faker::Hipster.sentences(1), rank: 3)
+li14 = ListItem.create(list_id: l2.id, item_id: i7.id, reason: Faker::Hipster.sentences(1), rank: 4)
+li15 = ListItem.create(list_id: l2.id, item_id: i6.id, reason: Faker::Hipster.sentences(1), rank: 5)
+li16 = ListItem.create(list_id: l2.id, item_id: i5.id, reason: Faker::Hipster.sentences(1), rank: 6)
+li17 = ListItem.create(list_id: l2.id, item_id: i4.id, reason: Faker::Hipster.sentences(1), rank: 7)
+li18 = ListItem.create(list_id: l2.id, item_id: i3.id, reason: Faker::Hipster.sentences(1), rank: 8)
+li19 = ListItem.create(list_id: l2.id, item_id: i1.id, reason: Faker::Hipster.sentences(1), rank: 9)
+li20 = ListItem.create(list_id: l2.id, item_id: i2.id, reason: Faker::Hipster.sentences(1), rank: 10)
+li21 = ListItem.create(list_id: l3.id, item_id: i2.id, reason: Faker::Hipster.sentences(1), rank: 1)
+li22 = ListItem.create(list_id: l3.id, item_id: i1.id, reason: Faker::Hipster.sentences(1), rank: 2)
+li23 = ListItem.create(list_id: l3.id, item_id: i3.id, reason: Faker::Hipster.sentences(1), rank: 3)
+li24 = ListItem.create(list_id: l3.id, item_id: i5.id, reason: Faker::Hipster.sentences(1), rank: 4)
+li25 = ListItem.create(list_id: l3.id, item_id: i4.id, reason: Faker::Hipster.sentences(1), rank: 5)
+li26 = ListItem.create(list_id: l3.id, item_id: i7.id, reason: Faker::Hipster.sentences(1), rank: 6)
+li27 = ListItem.create(list_id: l3.id, item_id: i6.id, reason: Faker::Hipster.sentences(1), rank: 7)
+li28 = ListItem.create(list_id: l3.id, item_id: i8.id, reason: Faker::Hipster.sentences(1), rank: 8)
+li29 = ListItem.create(list_id: l3.id, item_id: i9.id, reason: Faker::Hipster.sentences(1), rank: 9)
+li30 = ListItem.create(list_id: l3.id, item_id: i10.id, reason: Faker::Hipster.sentences(1), rank: 10)
