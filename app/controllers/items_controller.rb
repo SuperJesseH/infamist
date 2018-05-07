@@ -1,3 +1,6 @@
+require 'json'
+require 'rest-client'
+
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +13,9 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+response = RestClient.get(http://api.giphy.com/v1/gifs/search?q=pigeons&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4)
+parsed_response = JSON.parse(response.body)
+
   end
 
   # GET /items/new
