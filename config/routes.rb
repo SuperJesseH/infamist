@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :glist_items
   resources :blist_items
-  resources :blists
-    root  'blists#index'
+  resources :scoreboards
+    root  'scoreboards#index'
   resources :glists
   resources :items
   resources :users
