@@ -20,12 +20,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'rest-client'
 gem 'json'
 gem 'jquery-rails'
-
-
-# Use CoffeeScript for .coffee assets and views
+gem 'simple_form', '~> 4.0'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'simple_form_autocomplete'
+gem 'devise'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
