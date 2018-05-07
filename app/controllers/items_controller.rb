@@ -1,3 +1,6 @@
+require 'json'
+require 'rest-client'
+
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +13,12 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    name = @item.name
+    response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{name}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
+    parsed_response = JSON.parse(response.body)
+    @message = parsed_response
+    @image = @message['data'][0]['images']['fixed_width']['url']
+
   end
 
   # GET /items/new
@@ -69,6 +78,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.fetch(:item, {})
+      params.require(:item).permit(:name)
     end
 end

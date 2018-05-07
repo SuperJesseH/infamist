@@ -10,16 +10,30 @@ u1 = User.create(name: Faker::Name.unique.name)
 u2 = User.create(name: Faker::Name.unique.name)
 u3 = User.create(name: Faker::Name.unique.name)
 
+<<<<<<< HEAD
+i1 = Item.create(name: Faker::Movie.unique.name)
+i2 = Item.create(name: Faker::Music.unique.name)
+i3 = Item.create(name: Faker::Bank.unique.name)
+i3 = Item.create(name: 'pigeons')
+=======
 i1 = Item.create(name: Faker::Movie.name)
 i2 =Item.create(name: Faker::Music.name)
 i3 =Item.create(name: Faker::Bank.name)
 i4 =Item.create(name: Faker::BackToTheFuture.character)
 i5 =Item.create(name: Faker::DragonBall.character)
+>>>>>>> 3c5e43fabe0f36f44b73842e47646725a2a7df38
 
 gl1 = Glist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 gl2 = Glist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 gl3 = Glist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 
+<<<<<<< HEAD
+bl1 = Glist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
+bl2 = Glist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
+bl3 = Glist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
+
+bl_item1= BlistItem.create(list_id: bl1.id, item_id: i1.id)
+=======
 bl1 = Blist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 bl2 = Blist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 bl3 = Blist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
@@ -47,3 +61,4 @@ gl_item1= GlistItem.create(glist_id: bl3.id, item_id: i4.id, reason: Faker::Back
 gl_item2= GlistItem.create(glist_id: bl2.id, item_id: i4.id, reason: Faker::BackToTheFuture.quote, rank: 1)
 
 gl_item3= GlistItem.create(glist_id: bl1.id, item_id: i5.id, reason: Faker::BackToTheFuture.quote, rank: 1)
+>>>>>>> 3c5e43fabe0f36f44b73842e47646725a2a7df38
