@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root  'blists#index'
   resources :glists
   resources :items
+  get 'items/search', to: 'items#search'
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
