@@ -10,9 +10,9 @@ u1 = User.create(name: Faker::Name.unique.name)
 u2 = User.create(name: Faker::Name.unique.name)
 u3 = User.create(name: Faker::Name.unique.name)
 
-i1 = Item.create(name: Faker::Movie.unique.name)
-i2 =Item.create(name: Faker::Music.unique.name)
-i3 =Item.create(name: Faker::Bank.unique.name)
+i1 = Item.create(name: Faker::Movie.name)
+i2 =Item.create(name: Faker::Music.name)
+i3 =Item.create(name: Faker::Bank.name)
 i4 =Item.create(name: Faker::BackToTheFuture.character)
 i5 =Item.create(name: Faker::DragonBall.character)
 
