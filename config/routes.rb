@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :glist_items
   resources :blist_items
   resources :blists
