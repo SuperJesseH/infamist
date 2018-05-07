@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :glist_items
   resources :blist_items
   resources :blists
+    root  'blists#index'
   resources :glists
   resources :items
   resources :users
