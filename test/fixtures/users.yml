@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Item: MyString
+  Blsit_item: MyString
+  Glist_item: MyString
+  Glist: MyString
+  Blist: MyString
+
+two:
+  Item: MyString
+  Blsit_item: MyString
+  Glist_item: MyString
+  Glist: MyString
+  Blist: MyString

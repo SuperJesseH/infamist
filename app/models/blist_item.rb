@@ -1,0 +1,2 @@
+class BlistItem < ApplicationRecord
+end

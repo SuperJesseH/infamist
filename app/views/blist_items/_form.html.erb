@@ -1,0 +1,17 @@
+<%= form_with(model: blist_item, local: true) do |form| %>
+  <% if blist_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blist_item.errors.count, "error") %> prohibited this blist_item from being saved:</h2>
+
+      <ul>
+      <% blist_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
