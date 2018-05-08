@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_202726) do
+ActiveRecord::Schema.define(version: 2018_05_07_214833) do
 
   create_table "blist_items", force: :cascade do |t|
     t.integer "list_id"
@@ -44,9 +44,23 @@ ActiveRecord::Schema.define(version: 2018_05_07_202726) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
+=======
+  create_table "scoreboards", force: :cascade do |t|
+    t.string "item1"
+    t.string "item2"
+    t.string "item3"
+    t.string "item4"
+    t.string "item5"
+    t.string "item6"
+    t.string "item7"
+    t.string "item8"
+    t.string "item9"
+    t.string "item10"
+>>>>>>> 56309017f86433456030bf4705cff8b9f88198c1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

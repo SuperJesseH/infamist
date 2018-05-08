@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :glist_items
-  resources :blist_items
-  resources :blists
-    root  'blists#index'
-  resources :glists
+  resources :list_items
+  resources :scoreboards
+    root  'scoreboards#index'
+  resources :lists
   resources :items
   get 'items/search', to: 'items#search'
   resources :users
