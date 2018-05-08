@@ -7,19 +7,15 @@
 
 <p>
   <ol>
-  <strong>Blist:</strong>
-  <% @user.blist.items.each  do |item| %>
+  <strong>List:</strong>
+  <% @user.list.items.each  do |item| %>
   <li><%= item.name %></li>
   <%end%>
     </ol>
 </p>
 
-<p>
-  <strong>Glist:</strong>
-  <%= @user.glist.items[0].name %>
-</p>
 
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', users_path %>
