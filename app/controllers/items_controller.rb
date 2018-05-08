@@ -13,15 +13,27 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    name = @item.name
+    response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{name}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
+    parsed_response = JSON.parse(response.body)
+    @message = parsed_response
+    @image = @message['data'][0]['images']['fixed_width']['url']
 
   end
 
   # GET /items/new
   def new
     @item = Item.new
+
   end
 
   def search
+    @item = Item.new
+    @filter = params[:name]
+    response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{@filter}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
+    parsed_response = JSON.parse(response.body)
+    @message = parsed_response
+    @image = @message['data'][0]['images']['fixed_width']['url']
     render :new
   end
 
@@ -32,6 +44,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    byebug
     @item = Item.new(item_params)
 
     respond_to do |format|
@@ -77,6 +90,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name)
+      params.require(:item).permit(:name, :description, :img_url)
     end
 end
