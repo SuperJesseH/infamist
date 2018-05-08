@@ -10,7 +10,7 @@ u1 = User.create(name: Faker::Name.unique.name)
 u2 = User.create(name: Faker::Name.unique.name)
 u3 = User.create(name: Faker::Name.unique.name)
 
-<<<<<<< HEAD
+
 i1 = Item.create(name: Faker::Movie.name)
 i2 =Item.create(name: Faker::Music.name)
 i3 =Item.create(name: Faker::Bank.name)
@@ -48,7 +48,6 @@ gl_item1= GlistItem.create(glist_id: bl3.id, item_id: i4.id, reason: Faker::Back
 gl_item2= GlistItem.create(glist_id: bl2.id, item_id: i4.id, reason: Faker::BackToTheFuture.quote, rank: 1)
 
 gl_item3= GlistItem.create(glist_id: bl1.id, item_id: i5.id, reason: Faker::BackToTheFuture.quote, rank: 1)
-=======
 
 i1 = Item.create(name: Faker::Cat.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
 i2 =Item.create(name: Faker::Company.bs, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
@@ -97,4 +96,3 @@ li27 = ListItem.create(list_id: l3.id, item_id: i6.id, reason: Faker::Hipster.se
 li28 = ListItem.create(list_id: l3.id, item_id: i8.id, reason: Faker::Hipster.sentences(1), rank: 8)
 li29 = ListItem.create(list_id: l3.id, item_id: i9.id, reason: Faker::Hipster.sentences(1), rank: 9)
 li30 = ListItem.create(list_id: l3.id, item_id: i10.id, reason: Faker::Hipster.sentences(1), rank: 10)
->>>>>>> 545bf2a35b18483a27120c3eb551cffba452db60
