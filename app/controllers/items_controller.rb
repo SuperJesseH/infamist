@@ -19,8 +19,6 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-
-    byebug
   end
 
   def search

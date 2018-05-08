@@ -12,8 +12,12 @@
   <% end %>
 
   <%=form.text_field :name%>
-  <%= button_to "search", '/items/search', method: :get%>
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
+
+<%= form_tag 'items/search' do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag 'Search' %>
 <% end %>

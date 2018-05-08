@@ -12,15 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_05_07_202726) do
 
-  create_table "items", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "img_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "list_items", force: :cascade do |t|
+  create_table "blist_items", force: :cascade do |t|
     t.integer "list_id"
     t.integer "item_id"
     t.string "reason"
@@ -29,8 +21,31 @@ ActiveRecord::Schema.define(version: 2018_05_07_202726) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lists", force: :cascade do |t|
+  create_table "blists", force: :cascade do |t|
     t.integer "user_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "glist_items", force: :cascade do |t|
+    t.integer "list_id"
+    t.integer "item_id"
+    t.string "reason"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "glists", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +53,6 @@ ActiveRecord::Schema.define(version: 2018_05_07_202726) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
