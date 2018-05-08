@@ -17,6 +17,7 @@ i3 =Item.create(name: Faker::Bank.name)
 i4 =Item.create(name: Faker::BackToTheFuture.character)
 i5 =Item.create(name: Faker::DragonBall.character)
 
+<<<<<<< HEAD
 gl1 = Glist.create(user_id: u1.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 gl2 = Glist.create(user_id: u2.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
 gl3 = Glist.create(user_id: u3.id, description: Faker::HitchhikersGuideToTheGalaxy.quote)
@@ -48,6 +49,8 @@ gl_item1= GlistItem.create(glist_id: bl3.id, item_id: i4.id, reason: Faker::Back
 gl_item2= GlistItem.create(glist_id: bl2.id, item_id: i4.id, reason: Faker::BackToTheFuture.quote, rank: 1)
 
 gl_item3= GlistItem.create(glist_id: bl1.id, item_id: i5.id, reason: Faker::BackToTheFuture.quote, rank: 1)
+=======
+>>>>>>> f45c71f3c5c2f57000dfd05b9073a3aaeae8307a
 
 i1 = Item.create(name: Faker::Cat.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
 i2 =Item.create(name: Faker::Company.bs, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
