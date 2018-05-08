@@ -2,14 +2,14 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= @user.email %>
 </p>
 
 <p>
   <ol>
   <strong>List:</strong>
   <% @user.list.items.each  do |item| %>
-  <li><%= item.name %></li>
+  <li><%= item.name%></li>
   <%end%>
     </ol>
 </p>
