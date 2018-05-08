@@ -29,9 +29,9 @@ i9 =Item.create(name: Faker::BackToTheFuture.character, description: Faker::Demo
 i10 =Item.create(name: Faker::DragonBall.character, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
 
 
-l1 = List.create(user_id: u1.id, description: Faker::Dessert.topping)
-l2 = List.create(user_id: u2.id, description: Faker::Dessert.topping)
-l3 = List.create(user_id: u3.id, description: Faker::Dessert.topping)
+l1 = List.create(user_id: 1, description: Faker::Dessert.topping)
+l2 = List.create(user_id: 2, description: Faker::Dessert.topping)
+l3 = List.create(user_id: 3, description: Faker::Dessert.topping)
 
 
 li1 = ListItem.create(list_id: l1.id, item_id: i1.id, reason: Faker::Hipster.sentences(1), rank: 1)

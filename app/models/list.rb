@@ -10,5 +10,8 @@ class List < ApplicationRecord
     a = ListItem.all.select do |list_item|
       list_item.list_id = self.id
     end
+    a.sort_by do |item|
+      item.rank
+    end
   end
 end
