@@ -5,9 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :list
-
-
-
   # validates :name, presence: true, uniqueness: true
 
   # Include default devise modules. Others available are:
