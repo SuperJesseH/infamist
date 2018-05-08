@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :scoreboards
     root  'scoreboards#index'
   resources :lists
+  get 'items/search', to: 'items#search', as: 'search_item'
   resources :items
-  get 'items/search', to: 'items#search'
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
