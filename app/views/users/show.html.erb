@@ -7,9 +7,14 @@
 
 <p>
   <ol>
-  <strong>List:</strong>
-  <% @user.list.items.each  do |item| %>
-  <li><%= item.name%></li>
+  <% @user.list.items_in_order.each  do |item| %>
+  <li>
+    <strong>
+      <%= item[0].name%><br>
+    </strong>
+    <%= item[1]%><br>
+    <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
+  </li>
   <%end%>
     </ol>
 </p>
