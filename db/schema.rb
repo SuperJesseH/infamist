@@ -12,43 +12,30 @@
 
 ActiveRecord::Schema.define(version: 2018_05_07_214833) do
 
-  create_table "blist_items", force: :cascade do |t|
-    t.integer "list_id"
-    t.integer "item_id"
-    t.string "reason"
-    t.integer "rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blists", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "glist_items", force: :cascade do |t|
-    t.integer "list_id"
-    t.integer "item_id"
-    t.string "reason"
-    t.integer "rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "glists", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-<<<<<<< HEAD
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
-=======
+    t.string "img_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "list_items", force: :cascade do |t|
+    t.integer "list_id"
+    t.integer "item_id"
+    t.string "reason"
+    t.integer "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "scoreboards", force: :cascade do |t|
     t.string "item1"
     t.string "item2"
@@ -60,13 +47,13 @@ ActiveRecord::Schema.define(version: 2018_05_07_214833) do
     t.string "item8"
     t.string "item9"
     t.string "item10"
->>>>>>> 56309017f86433456030bf4705cff8b9f88198c1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -79,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_05_07_214833) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
