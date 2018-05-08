@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @list = List.find_by(user_id: params[:id])
   end
 
   # POST /users
