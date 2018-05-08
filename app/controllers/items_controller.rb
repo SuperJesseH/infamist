@@ -44,7 +44,6 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    byebug
     @item = Item.new(item_params)
 
     respond_to do |format|
