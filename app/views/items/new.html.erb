@@ -5,7 +5,7 @@
   <label>Name</label>
 
   <%if @filter%>
-    <input type="text_field" value='<%=@filter%>'/> <br />
+    <input type="text_field" value='<%=@filter%>' name="name"/> <br />
   <%else%>
     <%= text_field_tag :name %> <br />
   <%end%>
