@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    
+
     if params[:from] == "new"
       @item = Item.new
     else
@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
+    byebug
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -77,7 +77,6 @@ class ItemsController < ApplicationController
     else
       params[:item][:img_url] = params[:type_url]
     end
-        byebug
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }

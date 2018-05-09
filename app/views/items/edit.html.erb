@@ -1,4 +1,12 @@
 <h1>Edit Item</h1>
+<h1><%=@item.name%></h1>
+
+<img src="<%=@item.img_url%>">
+
+<h3><%=@item.description%></h3>
+
+
+
 
 
 <%= form_tag(search_item_path, method: :get ) do %>
@@ -8,7 +16,6 @@
     <input type="text_field" value='<%=@filter%>' name='name'/> <br />
   <%else%>
     <input type="text_field" value='<%=@item.name%>' name='name'/> <br />
-
   <%end%>
   <input type="text_field" name="from" style="display:none;" value="edit"/>
   <input type="text_field" name="id" style="display:none;" value='<%=@item.id%>'/>
