@@ -5,11 +5,7 @@
   <label>Name</label>
 
   <%if @filter%>
-<<<<<<< HEAD
-    <input type="text_field" value='<%=@filter%>' name='name'/> <br />
-=======
     <input type="text_field" value='<%=@filter%>' name="name"/> <br />
->>>>>>> 42aa991450e9a4912b45e7c130a6a10e71908039
   <%else%>
     <%= text_field_tag :name %> <br />
   <%end%>
