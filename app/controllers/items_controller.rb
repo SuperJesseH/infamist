@@ -28,13 +28,25 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @item = Item.new
+    
+    if params[:from] == "new"
+      @item = Item.new
+    else
+      @item = Item.find(params[:id])
+    end
     @filter = params[:name]
+
+
     response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{@filter}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
     parsed_response = JSON.parse(response.body)
     @message = parsed_response
     @image = @message['data'][0]['images']['fixed_width']['url']
-    render :new
+
+    if params[:from] == "new"
+      render :new
+    else
+      render :edit
+    end
   end
 
   # GET /items/1/edit
@@ -60,6 +72,12 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+    if params[:type_url] == ""
+      params[:item][:img_url] = params[:radio_url]
+    else
+      params[:item][:img_url] = params[:type_url]
+    end
+        byebug
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }

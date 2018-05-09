@@ -1,6 +1,41 @@
-<h1>Editing Item</h1>
+<h1>Edit Item</h1>
 
-<%= render 'form', item: @item %>
 
-<%= link_to 'Show', @item %> |
+<%= form_tag(search_item_path, method: :get ) do %>
+  <label>Name</label>
+
+  <%if @filter%>
+    <input type="text_field" value='<%=@filter%>' name='name'/> <br />
+  <%else%>
+    <input type="text_field" value='<%=@item.name%>' name='name'/> <br />
+
+  <%end%>
+  <input type="text_field" name="from" style="display:none;" value="edit"/>
+  <input type="text_field" name="id" style="display:none;" value='<%=@item.id%>'/>
+
+  <%= submit_tag 'Search for gif on Giphy!' %>
+<% end %>
+
+
+<br /><br />
+<%= form_for @item do |f|%>
+  <%if @filter != nil%>
+    <%@message['data'].each do |message|%>
+      <label>
+        &nbsp<input type="radio" name="radio_url" value="<%= message['images']['fixed_width']['url'] %>"/>&nbsp<img src="<%= message['images']['fixed_width']['url'] %>">
+      </label>
+    <%end%>
+  <%end%>
+  <br />
+  <p>Or add your own gif!</p>
+  <input type="text_field" name="type_url" value='<%=@item.img_url%>' />
+  <br />
+  <label>Description</label> <br />
+  <input name="item[description]" type="text_area" value="<%=@item.description%>"/>
+  <input type="text_field" name="item[name]" style="display:none;" value="<%=@item.name%>"/>
+  <br />
+  <%=f.submit "submit changes"%>
+<%end%>
+
+
 <%= link_to 'Back', items_path %>

@@ -5,10 +5,11 @@
   <label>Name</label>
 
   <%if @filter%>
-    <input type="text_field" value='<%=@filter%>'/> <br />
+    <input type="text_field" value='<%=@filter%>' name='name'/> <br />
   <%else%>
     <%= text_field_tag :name %> <br />
   <%end%>
+  <input type="text_field" name="from" style="display:none;" value="new"/>
 
   <%= submit_tag 'Search for gif on Giphy!' %>
 <% end %>
