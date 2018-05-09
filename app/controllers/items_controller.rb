@@ -29,24 +29,24 @@ class ItemsController < ApplicationController
 
   def search
 
-    if params[:from] == "new"
-      @item = Item.new
-    else
-      @item = Item.find(params[:id])
-    end
-    @filter = params[:name]
+    @item = Item.new
 
+    @filter = params[:name]
 
     response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{@filter}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
     parsed_response = JSON.parse(response.body)
     @message = parsed_response
-    @image = @message['data'][0]['images']['fixed_width']['url']
 
-    if params[:from] == "new"
-      render :new
-    else
-      render :edit
+    image = @message['data']
+    if image == []
+      response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{"shit"}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
+      parsed_response = JSON.parse(response.body)
+      @message = parsed_response
     end
+
+
+    render :new
+
   end
 
   # GET /items/1/edit
