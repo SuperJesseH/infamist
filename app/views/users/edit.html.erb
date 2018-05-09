@@ -30,13 +30,25 @@
     <ol>
       <!-- This identifies all of the items within the users list, and iterates in order-->
       <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
-    <% @user.list.items_in_order.each  do |item| %>
+    <% @user.list.items_in_order.each_with_index  do |item, index| %>
     <li>
       <strong>
         <!-- This displays name from item object-->
         <h3><%= item[0].name%></h3>
       </strong>
       <%= item[1]%><br><br>
+
+      <%= form_for @list_item do |f|%>
+        <%= f.label :item %>
+        <%= f.collection_select :item_id, @items, :id, :name %>
+        <%= f.label :reason %>
+        <%= f.text_field :reason %>
+        <%= f.submit "Enter your item" %>
+        <%= f.hidden_field :list_id %>
+        <%= hidden_field_tag "list_item[rank]", index + 1 %>
+
+      <% end %>
+
       <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
     </li>
     <%end%>
