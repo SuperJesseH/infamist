@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @list = List.find_by(user_id: params[:id])
+    @items = Item.all
+    @list_item = ListItem.new
   end
 
   # POST /users
