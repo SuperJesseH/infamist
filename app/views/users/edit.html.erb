@@ -1,6 +1,59 @@
-<h1>Editing User</h1>
+<% if @user.list.items.size >= 10 %>
 
-<%= render 'form', user: @user %>
+  <!-- This is the title of the page// identifies the owner of the list -->
+  <p>
+    <strong>Name:</strong>
+    <%= @user.user_name %>
+  </p>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <!-- This displays the list-->
+  <p>
+    <ol>
+      <!-- This identifies all of the items within the users list, and iterates in order-->
+      <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
+    <% @user.list.items_in_order.each  do |item| %>
+    <li>
+      <strong>
+        <!-- This displays name from item object-->
+        <h3><%= item[0].name%></h3>
+      </strong>
+      <%= item[1]%><br><br>
+      <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
+    </li>
+    <%end%>
+      </ol>
+  </p>
+
+<% else %>
+
+  <p>
+    <ol>
+      <!-- This identifies all of the items within the users list, and iterates in order-->
+      <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
+    <% @user.list.items_in_order.each  do |item| %>
+    <li>
+      <strong>
+        <!-- This displays name from item object-->
+        <h3><%= item[0].name%></h3>
+      </strong>
+      <%= item[1]%><br><br>
+      <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
+    </li>
+    <%end%>
+      </ol>
+  </p>
+
+  <%= form_for @list_item do |f|%>
+    <%= f.label :item %>
+    <%= f.collection_select :item_id, @items, :id, :name %>
+    <%= f.label :reason %>
+    <%= f.text_field :reason %>
+    <%= f.submit "Enter your item" %>
+    <%= f.hidden_field :list_id %>
+    <%= hidden_field_tag "list_item[rank]", @user.list.items.size + 1 %>
+
+  <% end %>
+
+<% end %>
+
+<%= link_to 'Done editing', user_path(@user) %>

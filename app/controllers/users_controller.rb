@@ -21,12 +21,13 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @list = List.find_by(user_id: params[:id])
+    @items = Item.all
+    @list_item = ListItem.new(list_id:@list.id)
   end
 
   # POST /users
   # POST /users.json
   def create
-    byebug
     @user = User.new(user_params)
 
     respond_to do |format|
