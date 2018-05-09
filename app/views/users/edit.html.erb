@@ -37,7 +37,7 @@
         <h3><%= item[0].name%></h3>
       </strong>
       <%= item[1]%><br><br>
-
+      <label> Replace this item: </label>
       <%= form_for @list_item do |f|%>
         <%= f.label :item %>
         <%= f.collection_select :item_id, @items, :id, :name %>
@@ -54,7 +54,7 @@
     <%end%>
       </ol>
   </p>
-
+  <label> Add new item: </label>
   <%= form_for @list_item do |f|%>
     <%= f.label :item %>
     <%= f.collection_select :item_id, @items, :id, :name %>
