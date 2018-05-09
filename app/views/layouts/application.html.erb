@@ -10,16 +10,15 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 
     		<div class="container">
 
     			<div class="navbar-header">
-    				<%= link_to "Infamist", root_path, class: "navbar-brand" %>
+    				<b><%= link_to "Infamist", root_path, class: "navbar-brand" %></b>
     			</div>
 
     			<ul class="nav navbar-nav">
-    				<li><%= link_to "Sign Up", new_user_registration_path %></li>
     				<% if user_signed_in? %>
     					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
     				<% else %>
@@ -41,6 +40,7 @@
 
     				<% if user_signed_in? %>
     					<li><%= link_to "New Item", new_item_path %></li>
+              <li><%= link_to "My list", user_path(current_user) %></li>
     				<% end %>
 
     			</ul>
