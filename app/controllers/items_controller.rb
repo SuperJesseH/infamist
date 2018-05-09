@@ -72,13 +72,9 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    if params[:type_url] == ""
-      params[:item][:img_url] = params[:radio_url]
-    else
-      params[:item][:img_url] = params[:type_url]
-    end
+
     respond_to do |format|
-      if @item.update(item_params)
+      if @item.update(description: params[:description])
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
