@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def search
+    @q = "%#{params[query]}%"
+    @users = User.where("user_name LIKE ?", @q)
+    
+  end
+
   # GET /users/1/edit
   def edit
     @list = List.find_by(user_id: params[:id])
