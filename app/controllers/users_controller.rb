@@ -15,6 +15,20 @@ class UsersController < ApplicationController
     @list = List.find_by(user_id: params[:id])
   end
 
+  def search
+    @users = []
+    filter = params[:name]
+
+    User.all.each do |el|
+      if el.user_name != nil
+        if el.user_name.index(filter)
+          @users << el
+        end
+      end
+    end
+    byebug
+  end
+
   # GET /users/new
   def new
     @user = User.new
