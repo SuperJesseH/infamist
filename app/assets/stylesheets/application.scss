@@ -14,12 +14,19 @@
  *= require_self
  */
 
+ footer {
+   background-color: #555;
+   color: white;
+   padding: 15px;
+ }
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import 'simple_form_autocomplete';
 
 
  /* User sign in and sign up forms. */
+
  .border-form-div {
    max-width: 300px;
    padding: 19px 29px 29px;
@@ -36,6 +43,7 @@
  .border-form-div .form-signin-heading,
  .border-form-div .checkbox {
    margin-bottom: 10px;
+   text-align: center;
  }
  .border-form-div input[type="text"],
  .border-form-div input[type="email"],

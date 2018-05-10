@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    byebug
     @users = User.all
   end
 
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
         end
       end
     end
-    byebug
   end
 
   # GET /users/new
@@ -44,8 +42,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-    byebug
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
