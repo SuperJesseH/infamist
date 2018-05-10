@@ -18,10 +18,7 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-=======
 <!-- top left "Top List" should have the top 10 most popular list items with their associated .gifs -->
->>>>>>> b5aa2591307c6d71350f554464dc8bc9269d4f2d
 <div class="container text-center">
   <div class="row">
     <div class="col-sm-3 well">
@@ -29,56 +26,14 @@
         <h4><b>Top List Items</b></h4>
       </div>
       <div class="well">
-        <b><p>1. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>2. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>3. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>4. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>5. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>6. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>7. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>8. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>9. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
-        <b><p>10. Item</p></b>
-        <p>Reason</p>
-        <div class="well">
-          <p>.gif</p>
-        </div>
+        <%for i in 0..9%>
+          <b><p><%=i+1%>. <%= @scoreboard[i][0].name%></p></b>
+          <p>Reason</p>
+          <p>Score: <%= @scoreboard[i][1].round(1)%></p>
+          <div class="well">
+            <p><img src=<%=@scoreboard[i][0].img_url%> alt="Gif of <%=@scoreboard[i][0].name%>"><br><br></p>
+          </div>
+        <%end%>
       </div>
     </div>
 
