@@ -1,8 +1,8 @@
-<h1>New Item</h1>
+<div class="m">
+<h1 class="container-fluid text-center">New Item</h1>
 
 
-<%= form_tag(search_item_path, method: :get ) do %>
-  <label>Name</label>
+<%= form_tag search_item_path, method: :get, :class => "container-fluid text-center" do %>
 
   <%if @filter%>
     <input type="text_field" value='<%=@filter%>' name="name"/> <br />
@@ -10,6 +10,7 @@
     <%= text_field_tag :name %> <br />
   <%end%>
 
+<br>
   <%= submit_tag 'Search for gif on Giphy!' %>
 <% end %>
 
@@ -18,9 +19,9 @@
 <%if @filter != nil%>
   <%= form_for @item do |f|%>
     <%@message['data'].each do |message|%>
-      <label>
-        &nbsp<input type="radio" name="item[img_url]" value="<%= message['images']['fixed_width']['url'] %>"/>&nbsp<img src="<%= message['images']['fixed_width']['url'] %>">
-      </label>
+      <label class="img-fluid" alt="Responsive image">
+        &nbsp<input type="radio" name="item[img_url]" value="<%= message['images']['original']['url'] %>"/>&nbsp<img src="<%= message['images']['original']['url'] %>">
+      </label> <br>
     <%end%>
     <br />
     <label>Description</label> <br />
@@ -33,3 +34,4 @@
 
 
 <%= link_to 'Back', items_path %>
+</div>

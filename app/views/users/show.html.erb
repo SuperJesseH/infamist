@@ -2,14 +2,12 @@
 
 
 <!-- This is the title of the page// identifies the owner of the list -->
-<p>
-  <strong>Name:</strong>
-  <%= @user.user_name %>
-</p>
+
+<p class="container-fluid text-center"><strong>Name:</strong> <%= @user.user_name %></p>
 
 <!-- This displays the list-->
-<p>
-  <ol>
+<p class="container-fluid text-center">
+  <ol class="container-fluid text-center">
     <!-- This identifies all of the items within the users list, and iterates in order-->
     <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
   <% @user.list.items_in_order.each  do |item| %>
