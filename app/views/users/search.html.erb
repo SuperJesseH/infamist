@@ -1,9 +1,8 @@
-<p class="mx-auto">
-  hi
-</p>
+<h1>Search Results</h1>
 
 <%@users.each do |user|%>
 
-  <%=link_to user.user_name, user %>
-
+  <h2>
+    <%=link_to user.user_name, user %>
+  </h2>
 <%end%>
