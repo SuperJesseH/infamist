@@ -5,10 +5,10 @@
 # #
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
-#
-u1 = User.create(user_name: "alice", email: 'a@b.com')
-u2 = User.create(user_name: "mat", email: 'c@d.com')
-u3 = User.create(user_name: "john", email: 'g@e.com')
+#"user_name"=>"Jane", "email"=>"J@d.com", "password"=>"password", "password"=>"password"
+u1 = User.create(user_name: "alice", email: 'a@b.com', password: "password", password_confirmation: "password")
+u2 = User.create(user_name: "mat", email: 'c@d.com', password: "password", password_confirmation: "password")
+u3 = User.create(user_name: "john", email: 'g@e.com', password: "password", password_confirmation: "password")
 
 
 i1 = Item.create(name: Faker::Cat.name, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
@@ -23,9 +23,9 @@ i9 =Item.create(name: Faker::BackToTheFuture.character, description: Faker::Demo
 i10 =Item.create(name: Faker::DragonBall.character, description: Faker::Demographic.demonym, img_url: "https://media.giphy.com/media/26DNdhSHx7gedBLoc/giphy.gif")
 
 
-# l1 = List.create(user_id: User.all[0].id, description: Faker::Dessert.topping)
-# l2 = List.create(user_id: User.all[1].id, description: Faker::Dessert.topping)
-# l3 = List.create(user_id: User.all[2].id, description: Faker::Dessert.topping)
+l1 = List.create(user_id: User.all[0].id, description: Faker::Dessert.topping)
+l2 = List.create(user_id: User.all[1].id, description: Faker::Dessert.topping)
+l3 = List.create(user_id: User.all[2].id, description: Faker::Dessert.topping)
 
 
 li1 = ListItem.create(list_id: 1, item_id: i1.id, reason: Faker::Hipster.sentences(1), rank: 1)
