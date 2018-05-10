@@ -28,13 +28,25 @@ class ItemsController < ApplicationController
   end
 
   def search
+
     @item = Item.new
+
     @filter = params[:name]
+
     response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{@filter}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
     parsed_response = JSON.parse(response.body)
     @message = parsed_response
-    @image = @message['data'][0]['images']['fixed_width']['url']
+
+    image = @message['data']
+    if image == []
+      response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{"shit"}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
+      parsed_response = JSON.parse(response.body)
+      @message = parsed_response
+    end
+
+
     render :new
+
   end
 
   # GET /items/1/edit
@@ -45,7 +57,6 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -60,8 +71,9 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+
     respond_to do |format|
-      if @item.update(item_params)
+      if @item.update(description: params[:description])
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else

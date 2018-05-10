@@ -1,7 +1,5 @@
 class ScoreboardsController < ApplicationController
   def index
-    #MOVE TO INDEX WHEN READY
-    # REFACTOR WITH "WHERE" - CURRENT USE OF LOOPS VERY SLOW FOR SQL
     @scoreboard = Item.all.map do |item|
       rank = item.list_items.sum do |list_item|
         list_item.rank

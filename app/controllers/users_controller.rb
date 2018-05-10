@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    byebug
     @users = User.all
   end
 
@@ -12,6 +13,20 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @list = List.find_by(user_id: params[:id])
+  end
+
+  def search
+    @users = []
+    filter = params[:name]
+
+    User.all.each do |el|
+      if el.user_name != nil
+        if el.user_name.index(filter)
+          @users << el
+        end
+      end
+    end
+    byebug
   end
 
   # GET /users/new
