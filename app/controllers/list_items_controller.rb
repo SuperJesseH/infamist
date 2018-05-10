@@ -1,4 +1,6 @@
 class ListItemsController < ApplicationController
+
+  #REFACTOR DRY 
   def create
     @list_item = ListItem.all.find do |litem|
       litem.list_id == params[:list_item][:list_id].to_i && litem.rank == params[:list_item][:rank].to_i

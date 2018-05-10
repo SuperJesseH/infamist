@@ -7,6 +7,8 @@ class List < ApplicationRecord
     # get all list_items and select the ones where list_id == self.id
     # order this array by rank
     #then map this over items
+    
+    #REFACTOR WITH "WHERE" CURRENT USE VERY SLOW IN SQL
     a = ListItem.all.select do |list_item|
       list_item.list_id == self.id
     end
