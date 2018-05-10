@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ol>
+      <%@scoreboard.each_with_index do |item, index|%>
+        <%if item[1] > 0%>
+          <li>
+            <strong><%=item[0].name%><br></strong><br>
+            <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>"><br><br>
+          </li>
+        <%end%>
+      <%end%>
+    </ol>
+  </body>
+</html>
