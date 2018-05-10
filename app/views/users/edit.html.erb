@@ -40,7 +40,7 @@
       <label> Replace this item: </label>
       <%= form_for @list_item do |f|%>
         <%= f.label :item %>
-        <%= f.collection_select :item_id, @items, :id, :name %>
+        <%= f.collection_select :item_id, @items, :id, :name %><br>
         <%= f.label :reason %>
         <%= f.text_field :reason %>
         <%= f.submit "Enter your item" %>
@@ -54,12 +54,12 @@
     <%end%>
       </ol>
   </p>
-  <label> Add new item: </label>
+  <label> Select or add new item to list: </label>
   <%= form_for @list_item do |f|%>
-    <%= f.label :item %>
-    <%= f.collection_select :item_id, @items, :id, :name %>
+    <%= f.collection_select :item_id, @items, :id, :name, {:prompt => 'Select item'} %> - OR -
+    <%= button_to "Create new item", new_item_path%><br>
     <%= f.label :reason %>
-    <%= f.text_field :reason %>
+    <%= f.text_field :reason %><br>
     <%= f.submit "Enter your item" %>
     <%= f.hidden_field :list_id %>
     <%= hidden_field_tag "list_item[rank]", @user.list.items.size + 1 %>
