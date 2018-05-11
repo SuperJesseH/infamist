@@ -14,9 +14,9 @@
   <%= submit_tag 'Search for gif on Giphy!' %>
 <% end %>
 
-
 <br /><br />
 <%if @filter != nil%>
+<div class = "container-fluid text-center" id="instruct">Click to select a Gif:
   <%= form_for @item do |f|%>
     <%@message['data'].each do |message|%>
       <label class="img-fluid" alt="Responsive image">
@@ -24,14 +24,12 @@
       </label> <br>
     <%end%>
     <br />
-    <label>Description</label> <br />
-    <input name="item[description]" type="text_area"/>
     <input type="text_field" name="item[name]" style="display:none;" value='<%=@filter%>'/>
     <br />
-    <%=f.submit "make new item"%>
+    <%=f.submit "Save"%>
   <%end%>
 <%end%>
-
+</div>
 
 <%= link_to 'Back', items_path %>
 </div>

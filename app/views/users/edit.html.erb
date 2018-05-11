@@ -1,3 +1,4 @@
+<div class = "container-fluid text-center" id="user_edit_page">
 <% if @user.list.items.size >= 10 %>
 
   <!-- This is the title of the page// identifies the owner of the list -->
@@ -8,14 +9,12 @@
 
   <!-- This displays the list-->
   <p>
-    <ol>
       <!-- This identifies all of the items within the users list, and iterates in order-->
       <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
     <% @user.list.items_in_order.each_with_index  do |item, index| %>
-    <li>
       <strong>
         <!-- This displays name from item object-->
-        <h3><%= item[0].name%></h3>
+        <h3 id="item_title"><%= item[0].name%></h3>
       </strong>
       <%= item[1]%><br>
       <label> Replace this item: </label>
@@ -30,29 +29,26 @@
         <%= hidden_field_tag "list_item[rank]", index + 1 %>
       <% end %>
       <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
-    </li>
+
     <%end%>
-      </ol>
+
   </p>
 
 <% else %>
 
   <p>
-    <ol>
       <!-- This identifies all of the items within the users list, and iterates in order-->
       <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
     <% @user.list.items_in_order.each_with_index  do |item, index| %>
-    <li>
       <strong>
         <!-- This displays name from item object-->
-        <h3><%= item[0].name%></h3>
+        <br><h3 id="item_title"><%= item[0].name%></h3>
       </strong>
-      <%= item[1]%><br><br>
+      <%= item[1]%><br>
       <label> Replace this item: </label>
       <%= form_for @list_item do |f|%>
         <%= f.collection_select :item_id, @items, :id, :name, {:prompt => 'Select item'}%><br>
-        <%= f.label :reason %>
-        <%= f.text_field :reason %>
+        <%= f.text_field :reason, :placeholder => 'Why\'d you add this?' %><br>
         <%= f.submit "Confirm" %>
         <%= f.hidden_field :list_id %>
         <%= hidden_field_tag "list_item[rank]", index + 1 %>
@@ -60,16 +56,20 @@
       <% end %>
 
       <img id="prof_images" src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
-    </li>
+
   <%end%>
-      </ol>
+
   </p>
+  <br>
+  <br>
   <label> Select or add new item to list: </label>
   <%= form_for @list_item do |f|%>
-    <%= f.collection_select :item_id, @items, :id, :name, {:prompt => 'Select item'} %> - OR -
-    <%= link_to "Create new item", new_item_path%><br>
-    <%= f.label :reason %>
-    <%= f.text_field :reason %><br>
+    <%= f.collection_select :item_id, @items, :id, :name, {:prompt => 'Select item'} %>
+    <br>
+     - OR -
+    <br>
+    <%= link_to "Create new item", new_item_path%><br><br>
+    <%= f.text_field :reason, :placeholder => 'Why\'d you add this?' %><br><br>
     <%= f.submit "Add to list" %>
     <%= f.hidden_field :list_id %>
     <%= hidden_field_tag "list_item[rank]", @user.list.items.size + 1 %>
@@ -80,3 +80,4 @@
 <% end %>
 <br>
 <%= link_to 'Done editing', user_path(@user) %>
+</div>
