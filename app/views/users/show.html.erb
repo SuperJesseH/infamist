@@ -1,27 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <p id="notice"><%= notice %></p>
+  <body>
+
+    <h2 id="item_name"><%= @user.user_name.capitalize %>'s list</h2>
+
+    <!-- This displays the list-->
+      <div class="container">
+        <div class="row">
+            <div  id="home-banner-title" class="well">
+              <% @user.list.items_in_order.each  do |item| %>
+                <div class="thumbnail">
+                  <p id="item_name"><%=item[0].name%></p> <br>
+                  <img id="prof_images" src=<%=item[0].img_url%>>
+                </div>
+              <%end%>
+          </div>
+    <%= link_to 'Edit', edit_user_path(current_user) %>
+
+
+  </body>
+</html>
+
+
 
 
 <!-- This is the title of the page// identifies the owner of the list -->
-
-<p class="container-fluid text-center"><strong>Name:</strong> <%= @user.user_name %></p>
-
-<!-- This displays the list-->
-
-<div class="col-sm-9">
-  <div class="well">
-    <ol class="container-fluid text-center">
-      <!-- This identifies all of the items within the users list, and iterates in order-->
-      <!-- [[<*item object*>, "I hate these things"], [<* item object 2 *>, "also smelly"]]-->
-    <% @user.list.items_in_order.each  do |item| %>
-    <li>
-      <strong>
-        <!-- This displays name from item object-->
-        <h3><%= item[0].name%></h3>
-      </strong>
-      <%= item[1]%><br><br>
-      <img src=<%=item[0].img_url%> alt="Gif of <%=item[0].name%>">
-    </li>
-    <%end%>
-      </ol>
-  </div>
-<%= link_to 'Edit', edit_user_path(current_user) %>

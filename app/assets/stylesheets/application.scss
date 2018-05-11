@@ -20,6 +20,41 @@
  //   padding: 15px;
  // }
 
+
+
+#prof_images {
+  width: 300px;
+  length: 300px;
+}
+
+ #item_name {
+    text-align: center; /* !!! */
+  }
+
+
+ #myImage {
+
+   max-width:100%;
+ height:auto;
+}
+
+
+
+
+#b-t {
+background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+#home-banner-title {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+#home-banner {
+  background-color: white;
+}
+
+
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import 'simple_form_autocomplete';
