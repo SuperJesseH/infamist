@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<head>
+<style>
+.name{
+  font-size:30px;
+  font-weight: bold;
+}
+.reason{
+  font-size:20px;
+  font-weight: bold;
+}
+</style>
+</head>
 <p id="notice"><%= notice %></p>
   <body>
 
@@ -12,8 +24,8 @@
               <% @user.list.items_in_order.each_with_index  do |item, index| %>
                 <div class="thumbnail">
                   <div id="item_numandname"><%=index+1%> .
-                  <p id="item_name"><%=item[0].name%></p> </div><br>
-                  <p id="item_reason"><%=item[1]%></p> <br>
+                  <p id="item_name" class="name"><%=item[0].name%></p> </div><br>
+                  <p id="item_reason" class="reason"><%=item[1]%></p> <br>
                   <img id="prof_images" src=<%=item[0].img_url%>>
                 </div>
               <%end%>
