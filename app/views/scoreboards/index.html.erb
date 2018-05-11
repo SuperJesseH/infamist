@@ -17,7 +17,7 @@
         <div id="home-banner" class="col-lg-10 well">
           <div id="home-banner-title" class="well">
             <h3>
-              <b>Top List Items</b>
+              <b>The worst things</b>
             </h3>
           </div>
           <%for i in 0..9%>
@@ -40,7 +40,7 @@
               <div id="home-banner" class="well">
                 <div id="home-banner-title" class="well">
                 <h3>
-                  <b>Honorable Mentions</b>
+                  <b>The latest trash</b>
                 </h3>
               </div>
 
@@ -48,6 +48,7 @@
 
                     <% if item.id > (@items.last.id - 15) %>
                       <div class="thumbnail">
+                        <%=item.name%>
                         <img id="prof_images" src=<%=item.img_url%>
                       </div>
                       </div>
