@@ -13,8 +13,8 @@
 
     <!-- top left "Top List" should have the top 10 most popular list items with their associated .gifs -->
     <div class="container text-center">
-      <div class="row">
-        <div id="home-banner" class="col-sm-3 well">
+      <div id="lets-test" class="row">
+        <div id="home-banner" class="col-lg-8 well">
           <div id="home-banner-title" class="well">
             <h3>
               <b>Top List Items</b>
@@ -36,15 +36,15 @@
         <!-- This should be a feed of the most recent list items -->
         <div class="container text-center">
           <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-4">
               <div class="well">
                 <h3>
                   <b>Honorable Mentions</b>
                 </h3>
               <div class="thumbnail">
-                <% x = @items.last.id %>
-                <% @items.each do |item| %>
-                <% if @items.count >= 15 && item.id >= (x-15) %>
+                  <% x = @items.last.id %>
+                  <% @items.each do |item| %>
+                  <% if @items.count >= 15 && item.id >= (x-15) %>
               <img id="prof_images" src=<%=item.img_url%>
               </div>
               <%end%>
