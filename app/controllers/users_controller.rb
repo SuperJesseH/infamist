@@ -11,27 +11,26 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    byebug
     @list = List.find_by(user_id: params[:id])
-  end
-
-  def search
-    @users = []
-    filter = params[:name]
-
-    User.all.each do |el|
-      if el.user_name != nil
-        if el.user_name.index(filter)
-          @users << el
-        end
-      end
-    end
   end
 
   # GET /users/new
   def new
     @user = User.new
   end
+
+  def search
+     @users = []
+     filter = params[:name]
+
+     User.all.each do |el|
+       if el.user_name != nil
+         if el.user_name.index(filter)
+           @users << el
+         end
+       end
+     end
+   end
 
   # GET /users/1/edit
   def edit
@@ -43,6 +42,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    @user = User.new(user_params)
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

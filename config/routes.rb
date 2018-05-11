@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root  'scoreboards#index'
   get 'lists/create', to: 'lists#create', as: 'create_list'
   resources :lists
-  get 'items/:id', to: 'items#search', as: 'search_item'
+    get 'items/search', to: 'items#search', as: 'search_item'
   resources :items
   get 'users/search', to: 'users#search', as: 'search_user'
   resources :users
