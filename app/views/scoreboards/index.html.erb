@@ -10,15 +10,15 @@
     <style></style>
   </head>
   <body id="b-t">
-
+<div class="container-fluid mx-auto">
     <!-- top left "Top List" should have the top 10 most popular list items with their associated .gifs -->
-    <div class="container text-center">
-      <div id="lets-test" class="row">
-        <div id="home-banner" class="col-lg-10 well">
+    <div id="big-div" class="container text-center">
+      <div class="row">
+        <div id="home-banner" class="col-lg-8 well">
           <div id="home-banner-title" class="well">
-            <h3>
+            <h1>
               <b>Top List Items</b>
-            </h3>
+            </h1>
           </div>
           <%for i in 0..9%>
             <p>
@@ -34,14 +34,14 @@
         </div>
 
         <!-- This should be a feed of the most recent list items -->
-        <div id="small_div" class="container text-center">
+        <div class="container text-center">
           <div class="row">
             <div class="col-sm-4">
-              <div id="home-banner" class="well">
+              <div id="small-div" class="well">
                 <div id="home-banner-title" class="well">
-                <h3>
+                <h2>
                   <b>Honorable Mentions</b>
-                </h3>
+                </h2>
               </div>
 
                   <% @items.each do |item| %>
@@ -56,6 +56,10 @@
                 </div>
                 </div>
                 </div>
+
+
+
+              </div>
 
 
 
