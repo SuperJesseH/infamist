@@ -34,21 +34,28 @@
         </div>
 
         <!-- This should be a feed of the most recent list items -->
-        <div class="container text-center">
-          <div class="row">
+        <div id="small-div" class="container text-center">
+          <div id="home-banner" class="row">
             <div class="col-sm-4">
               <div class="well">
+                <div id="home-banner-title" class="well">
                 <h3>
                   <b>Honorable Mentions</b>
                 </h3>
-              <div class="thumbnail">
-                  <% x = @items.last.id %>
-                  <% @items.each do |item| %>
-                  <% if @items.count >= 15 && item.id >= (x-15) %>
-              <img id="prof_images" src=<%=item.img_url%>
               </div>
-              <%end%>
-              <%end%>
+
+                  <% @items.each do |item| %>
+
+                    <% if item.id > (@items.last.id - 15) %>
+                      <div class="thumbnail">
+                        <img id="prof_images" src=<%=item.img_url%>
+                      </div>
+                      </div>
+                    <%end%>
+                  <%end%>
+                </div>
+                </div>
+                </div>
 
 
 
