@@ -9,13 +9,11 @@ class ListsController < ApplicationController
   def edit
   end
 
-  def new
-    @list = List.new
-  end
-
   def create
+    user = User.last
     @list = List.create(user_id: current_user.id, description: params[:description])
-    redirect_to edit_user_path(current_user)
+    byebug
+    redirect_to edit_user_path(user)
   end
 
 

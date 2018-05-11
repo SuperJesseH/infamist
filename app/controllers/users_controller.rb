@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    byebug
     @list = List.find_by(user_id: params[:id])
   end
 
