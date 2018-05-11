@@ -12,7 +12,6 @@ class ListsController < ApplicationController
   def create
     user = User.last
     @list = List.create(user_id: current_user.id, description: params[:description])
-    byebug
     redirect_to edit_user_path(user)
   end
 
