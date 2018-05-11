@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     response = RestClient.get("http://api.giphy.com/v1/gifs/search?q=#{name}&api_key=hp5AK3qJY6hzimeb11LL8J2jxeWYTnGX&limit=4")
     parsed_response = JSON.parse(response.body)
     @message = parsed_response
-    @image = @message['data'][0]['images']['original']['url']
+    # @image = @message['data'][0]['images']['original']['url']
 
   end
 
