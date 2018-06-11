@@ -17,7 +17,7 @@
         <div id="home-banner" class="col-lg-8 well">
           <div id="home-banner-title" class="well">
             <h1>
-              <b>The worst things</b>
+              <b>The Worst Things</b>
             </h1>
           </div>
           <%for i in 0..9%>
@@ -29,6 +29,12 @@
               <%= @scoreboard[i][1].round(1)%></p>
             <div id="home-banner" class="thumbnail">
               <p><img id="myImage" src=<%=@scoreboard[i][0].img_url%> alt="Gif of <%=@scoreboard[i][0].name%>"><br><br></p>
+              <div>
+              <input id="trash-icon" type="image" src="https://png.icons8.com/ultraviolet/2x/action.png" />
+              <br>
+              <text>97 Haters</text>
+            </div>
+
             </div>
           <%end%>
         </div>
@@ -40,18 +46,24 @@
               <div id="small-div" class="well">
                 <div id="home-banner-title" class="well">
                 <h1>
-                  <b>The latest trash</b>
+                  <b>The Latest Trash</b>
                 </h1>
               </div>
 
                   <% @items.each do |item| %>
 
-                    <% if item.id > (@items.last.id - 15) %>
+                    <% if item.id > (@items.last.id - 12) %>
                       <div class="thumbnail">
                         <%=item.name%>
                         <img id="prof_images" src=<%=item.img_url%>
                       </div>
                       </div>
+                      <div>
+                        <input id="trash-icon" type="image" src="https://png.icons8.com/office/2x/mailbox-opened-flag-down.png" />
+                        <br>
+                        <text>Posted by Shun</text>
+                        <br>
+                        </div>
                     <%end%>
                   <%end%>
                 </div>

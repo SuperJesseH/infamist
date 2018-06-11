@@ -13,13 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
- // footer {
- //   background-color: #555;
- //   color: white;
- //   padding: 15px;
- // }
-
+// footer {
+//   background-color: #555;
+//   color: white;
+//   padding: 15px;
+// }
 * {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -32,33 +30,42 @@
   background-color: white;
 }
 
+#b-t {
+  background-color: #f2f2f2;
+}
+
+#trash-icon {
+  width: 30px;
+  height: 30px;
+}
 // #big-div {
 //   margin-right: 20%;
 // }
 
 #prof_images {
   width: 300px;
-  length: 300px;
+  height: 285.75px;
 }
 
- #item_name {
-    text-align: center; /* !!! */
-  }
+#item_name {
+  text-align: center;
+  /* !!! */
+}
 
-  #item_reason {
-     text-align: center; /* !!! */
-   }
+#item_reason {
+  text-align: center;
+  /* !!! */
+}
 
-   #item_numandname {
-        font-size: 60px;
-        color: red /* !!! */
-    }
+#item_numandname {
+  font-size: 60px;
+  /* !!! */
+  color: red;
+}
 
-
- #myImage {
-
-   max-width:100%;
- height:300px;
+#myImage {
+  max-width: 100%;
+  height: 300px;
 }
 
 #edit_div {
@@ -80,7 +87,6 @@
   font-size: 50px;
 }
 
-
 #home-banner-title {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
@@ -88,39 +94,35 @@
 #home-banner {
   background-color: white;
 }
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'simple_form_autocomplete';
+/* User sign in and sign up forms. */
+.border-form-div {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
 
+.border-form-div .checkbox,
+.border-form-div .form-signin-heading {
+  margin-bottom: 10px;
+  text-align: center;
+}
 
-
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import 'simple_form_autocomplete';
-
-
- /* User sign in and sign up forms. */
-
- .border-form-div {
-   max-width: 300px;
-   padding: 19px 29px 29px;
-   margin: 0 auto 20px;
-   background-color: #fff;
-   border: 1px solid #e5e5e5;
-   -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-           border-radius: 5px;
-   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-           box-shadow: 0 1px 2px rgba(0,0,0,.05);
- }
- .border-form-div .form-signin-heading,
- .border-form-div .checkbox {
-   margin-bottom: 10px;
-   text-align: center;
- }
- .border-form-div input[type="text"],
- .border-form-div input[type="email"],
- .border-form-div input[type="password"] {
-   font-size: 16px;
-   height: auto;
-   margin-bottom: 15px;
-   padding: 7px 9px;
- }
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
