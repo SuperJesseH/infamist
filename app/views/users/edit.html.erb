@@ -19,7 +19,7 @@
       <%= item[1]%><br>
       <label> Replace this item: </label>
       <%= form_for @list_item do |f|%>
-        <%= f.collection_select :item_id, @items, :id, :name, {:prompt => 'Select item'}%>
+        <%= f.collection_select :item_id, @items, :id, :name, :prompt => 'Select item'%>
         <%= link_to "Create new item", new_item_path%>
         <br>
         <%= f.label :reason %>

@@ -46,7 +46,7 @@
 
                   <% @items.each do |item| %>
 
-                    <% if item.id > (@items.last.id - 15) %>
+                    <% if item.id > (@items.last.id - 11) %>
                       <div class="thumbnail">
                         <%=item.name%>
                         <img id="prof_images" src=<%=item.img_url%>

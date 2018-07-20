@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @list = List.find_by(user_id: params[:id])
-    @items = Item.all
+    @items = Item.all.sort_by {|item| item.name}
     @list_item = ListItem.new(list_id:@list.id)
   end
 
